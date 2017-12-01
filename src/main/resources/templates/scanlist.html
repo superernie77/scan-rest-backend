@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Previous Scans</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/registration.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div th:if="${scans}">
+				<h3>Scan List</h3>
+				<table class="table">
+					<tr>
+						<th>Id</th>
+						<th>Erzeugt am</th>
+						<th>Erzeugt durch</th>
+						<th>Code</th>
+						<th>Format</th>
+						<th>Beschreibung</th>
+					</tr>
+					<tr th:each="bean : ${scans}">
+						<td th:text="${bean.id}">1</td>
+						<td th:text="${#dates.format(bean.creationTsp.time, 'dd-MM-yyyy HH:mm')}">13:00, 12.11.2017</td>
+						<td th:text="${bean.createdBy}">ENE</td>
+						<td th:text="${bean.barcode}">0</td>
+						<td th:text="${bean.format}">0</td>
+						<td th:text="${bean.message}">0</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

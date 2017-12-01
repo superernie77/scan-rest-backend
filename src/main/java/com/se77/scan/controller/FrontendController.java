@@ -20,7 +20,7 @@ public class FrontendController {
 	@Autowired
 	private ScanMessageRepository repo;
 	
-    @RequestMapping(value="/scans", method = RequestMethod.GET)
+    @RequestMapping(value="/", method = RequestMethod.GET)
     public ModelAndView init(){
         ModelAndView modelAndView = new ModelAndView();
 

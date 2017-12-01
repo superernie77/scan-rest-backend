@@ -6,9 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.se77.scan.domain.ScanMessage;
 import com.se77.scan.repo.ScanMessageRepository;
@@ -32,13 +30,14 @@ public class ScanMessageResource {
 	private ScanMessageRepository scanMessageRepo;
 	
 	@RequestMapping(path="/message", method = RequestMethod.POST )
-	public void postMessage(ScanMessage message) {
+	public void postMessage(@RequestBody ScanMessage message) {
+		message.setCreationTsp(Calendar.getInstance());
+		message.setId(null);
 		scanMessageRepo.save(message);
-		
 	}
 	
 	@RequestMapping(path="/message", method = RequestMethod.GET ) 
-	public List<ScanMessage> getAllMessages(){		
+	public List<ScanMessage> getAllMessages() {		
 		return scanMessageRepo.findAll();
 	}
 

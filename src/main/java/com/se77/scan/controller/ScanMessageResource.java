@@ -16,18 +16,6 @@ import com.se77.scan.repo.ScanMessageRepository;
 @RestController
 public class ScanMessageResource {
 	
-	
-	@PostConstruct
-	public void setup() {
-		ScanMessage message = new ScanMessage();
-		message.setBarcode("1223");
-		message.setCreatedBy("ENE");
-		message.setCreationTsp(Calendar.getInstance());
-		message.setFormat("String");
-		message.setMessage("First demo message");
-		scanMessageRepo.save(message);
-	}
-	
 	@Autowired
 	private ScanMessageRepository scanMessageRepo;
 	

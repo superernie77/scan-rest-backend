@@ -4,9 +4,8 @@ Backend REST-Service and GUI for the [android scan app](https://github.com/super
 
 An overview of the past scans can be displayed by the following URL:
 
-```
-https://scan-rest-backend.herokuapp.com/
-```
+*** [https://scan-rest-backend.herokuapp.com/]
+
 
 The rest endpoint listens under the following URL and accepts POST and GET requests.
 

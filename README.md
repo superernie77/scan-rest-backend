@@ -6,7 +6,7 @@ Backend REST-Service and GUI for the [android scan app](https://github.com/super
 The rest endpoint listens under the following URL and accepts POST and GET requests.
 
 ```
-https://scan-rest-backend.herokuapp.com/message
+http://localhost:8080/message
 ```
 
 The REST service consumes the following message Json in a POST request:
@@ -19,21 +19,9 @@ The REST service consumes the following message Json in a POST request:
     "message": "fourth demo message"
 }
 ```
-# Configuration
-
-The apppplication can be started in two profiles:
-- default: uses H2 database to persist messages
-- heroku : uses the database connection parameters defined in application-heroku.properties to connect to an MySql DB.
-
-The connetion parameters are read from the following system / environment variables_
-- ${DATASOURCE_URL}
-- ${DATASOURCE_USERNAME}
-- ${DATASOURCE_PWD}
 
 # Used Technologies
 
-+ Spring Web
++ Spring Boot 3.1.5
 + Thymeleaf
 + Spring Data JPA
-+ Heroku 
-+ JawsDB (MySql)

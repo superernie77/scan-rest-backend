@@ -12,7 +12,7 @@ import com.se77.scan.domain.ScanMessage;
 import com.se77.scan.repo.ScanMessageRepository;
 
 /**
- * Spring MVC-Controller class for the login and registration screen.
+ * Spring MVC-Controller class for the lust of past scans.
  */
 @Controller
 public class FrontendController {
@@ -20,6 +20,9 @@ public class FrontendController {
 	@Autowired
 	private ScanMessageRepository repo;
 	
+	/**
+	 * Root URL Mapping. Forwards to the scan list page.
+	 */
     @RequestMapping(value="/", method = RequestMethod.GET)
     public ModelAndView init(){
         ModelAndView modelAndView = new ModelAndView();

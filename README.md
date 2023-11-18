@@ -16,8 +16,15 @@ The REST service consumes the following message Json in a POST request:
     "createdBy": "ENE",
     "barcode": "1223",
     "format": "String",
-    "message": "fourth demo message"
+    "message": "demo message"
 }
+```
+
+To look at the list of past scans simply hit:
+
+```
+http://localhost:8080/
+
 ```
 
 # Used Technologies
@@ -25,3 +32,4 @@ The REST service consumes the following message Json in a POST request:
 + Spring Boot 3.1.5
 + Thymeleaf
 + Spring Data JPA
++ JUnit 5
